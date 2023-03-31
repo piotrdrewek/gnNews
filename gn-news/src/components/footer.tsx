@@ -12,7 +12,6 @@ const useStyles = makeStyles({
     alignContent: "center",
     alignItems: "center",
     height: "100%",
-    // backgroundColor: "#cfcece !important",
     backgroundColor: "black !important",
     borderBottomLeftRadius: "0 !important",
     borderBottomRightRadius: "0 !important",

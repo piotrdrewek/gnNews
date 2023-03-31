@@ -51,7 +51,6 @@ const useStyles = makeStyles({
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    // justifyContent: "center",
   },
   Bottom: {
     width: "100%",
