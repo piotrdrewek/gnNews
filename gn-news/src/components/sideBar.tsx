@@ -17,11 +17,13 @@ const useStyles = makeStyles({
     height: "100%",
     flexDirection: "column",
     width: "100%",
+    backgroundColor: "#141414 !important",
   },
   button: {
     width: "100%",
     display: "flex",
     justifyContent: "space-around !important",
+    color: "#767676 !important",
   },
 });
 
@@ -33,7 +35,12 @@ export default function SideBar() {
     <Router>
       <Paper className={classes.sideBar}>
         <ul className="w-100 list-group d-flex flex-column align-items-center">
-          <li className="w-100 list-group-item d-flex justify-content-around">
+          <li
+            className="w-100 list-group-item d-flex justify-content-around"
+            style={{
+              backgroundColor: "#3a3a3a",
+            }}
+          >
             <Button
               component={Link}
               to={"/country/argentina"}
@@ -48,7 +55,10 @@ export default function SideBar() {
               <Typography>Argentina</Typography>
             </Button>
           </li>
-          <li className="w-100 list-group-item">
+          <li
+            className="w-100 list-group-item"
+            style={{ backgroundColor: "#3a3a3a" }}
+          >
             <Button
               component={Link}
               to={"/country/belgium"}
@@ -63,7 +73,10 @@ export default function SideBar() {
               <Typography>Belgium</Typography>
             </Button>
           </li>
-          <li className="w-100 list-group-item">
+          <li
+            className="w-100 list-group-item"
+            style={{ backgroundColor: "#3a3a3a" }}
+          >
             <Button
               component={Link}
               to={"/country/canada"}
@@ -78,7 +91,10 @@ export default function SideBar() {
               <Typography>Canada</Typography>
             </Button>
           </li>
-          <li className="w-100 list-group-item">
+          <li
+            className="w-100 list-group-item"
+            style={{ backgroundColor: "#3a3a3a" }}
+          >
             <Button
               component={Link}
               to={"/country/france"}
@@ -93,7 +109,10 @@ export default function SideBar() {
               <Typography>France</Typography>
             </Button>
           </li>
-          <li className="w-100 list-group-item">
+          <li
+            className="w-100 list-group-item"
+            style={{ backgroundColor: "#3a3a3a" }}
+          >
             <Button
               component={Link}
               to={"/country/germany"}
@@ -108,7 +127,10 @@ export default function SideBar() {
               <Typography>Germany</Typography>
             </Button>
           </li>
-          <li className="w-100 list-group-item">
+          <li
+            className="w-100 list-group-item"
+            style={{ backgroundColor: "#3a3a3a" }}
+          >
             <Button
               component={Link}
               to={"/country/poland"}

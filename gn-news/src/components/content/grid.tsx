@@ -5,12 +5,13 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import ArticleIcon from "@mui/icons-material/Article";
 
 const useStyles = makeStyles({
   Content: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#e2e0e0 !important",
+    backgroundColor: "#767676 !important",
   },
   Header: {
     display: "flex",
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
     width: "100%",
     alignItems: "center",
   },
-  Title: {
+  Text: {
     textAlign: "start",
     fontWeight: "bold !important",
     textTransform: "none",
@@ -37,6 +38,23 @@ const useStyles = makeStyles({
     width: "100%",
     alignItems: "flex-start !important",
     justifyContent: "space-between !important",
+  },
+  Title: {
+    display: "flex !important",
+    flexDirection: "row",
+  },
+  Link: {
+    color: "black !important",
+    backgroundColor: "#3a3a3a !important",
+  },
+  Open: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    // justifyContent: "center",
+  },
+  Bottom: {
+    width: "100%",
   },
 });
 interface Props {
@@ -53,7 +71,7 @@ export default function Grid(article: Props) {
       className={classes.Content}
       style={{
         minWidth: "150px",
-        width: "20%",
+        width: "23%",
       }}
     >
       <Button
@@ -62,9 +80,12 @@ export default function Grid(article: Props) {
           open ? setOpen(false) : setOpen(true);
         }}
       >
-        <Typography className={classes.Title}>
-          {article.article.title}
-        </Typography>
+        <div className={classes.Title}>
+          <ArticleIcon />
+          <Typography className={classes.Text}>
+            {article.article.title}
+          </Typography>
+        </div>
 
         {article.article.urlToImage && (
           <img
@@ -73,27 +94,37 @@ export default function Grid(article: Props) {
             alt="..."
           ></img>
         )}
-        {open && (
-          <>
-            {article.article.description && (
-              <Typography>{article.article.description}</Typography>
-            )}
-            <Typography>{article.article.author}</Typography>
+        <div className={classes.Bottom}>
+          {open && (
+            <div className={classes.Open}>
+              {article.article.description && (
+                <Typography style={{ textAlign: "start" }}>
+                  {article.article.description}
+                </Typography>
+              )}
+              <Typography style={{ fontSize: "0.8rem" }}>
+                {article.article.author}
+              </Typography>
 
-            <Button href={article.article.url} target="_blank">
-              <Typography>Open article in new tab</Typography>
-            </Button>
-          </>
-        )}
-        <div className={classes.Info}>
-          <Typography style={{ fontSize: "0.8rem" }}>
-            {article.article.source.name + ": "}
-          </Typography>
-          <Typography style={{ fontSize: "0.8rem" }}>
-            {publishedAt.toLocaleString()}
-          </Typography>
-          {!open && <KeyboardArrowDownIcon />}
-          {open && <KeyboardArrowUpIcon />}
+              <Button
+                className={classes.Link}
+                href={article.article.url}
+                target="_blank"
+              >
+                <Typography>Open article in new tab</Typography>
+              </Button>
+            </div>
+          )}
+          <div className={classes.Info}>
+            <Typography style={{ fontSize: "0.8rem" }}>
+              {article.article.source.name + ": "}
+            </Typography>
+            <Typography style={{ fontSize: "0.8rem" }}>
+              {publishedAt.toLocaleString()}
+            </Typography>
+            {!open && <KeyboardArrowDownIcon />}
+            {open && <KeyboardArrowUpIcon />}
+          </div>
         </div>
       </Button>
     </Paper>

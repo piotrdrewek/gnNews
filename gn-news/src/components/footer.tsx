@@ -12,13 +12,15 @@ const useStyles = makeStyles({
     alignContent: "center",
     alignItems: "center",
     height: "100%",
-    backgroundColor: "#cfcece !important",
+    // backgroundColor: "#cfcece !important",
+    backgroundColor: "black !important",
     borderBottomLeftRadius: "0 !important",
     borderBottomRightRadius: "0 !important",
   },
   subTitle: {
-    fontSize: "1rem !important",
+    fontSize: "0.9rem !important",
     marginLeft: "10% !important",
+    color: "white !important",
   },
   buttons: {
     marginRight: "10% !important",

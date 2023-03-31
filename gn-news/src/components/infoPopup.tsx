@@ -23,8 +23,15 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "space-around",
     alignItems: "center",
+    backgroundColor: "black !important",
   },
-  Title: {},
+  Text: {
+    color: "white !important",
+  },
+  Button: {
+    color: "black !important",
+    backgroundColor: "#3a3a3a !important",
+  },
 });
 
 export default function InfoPopup() {
@@ -33,14 +40,16 @@ export default function InfoPopup() {
   return (
     <div className={classes.Content}>
       <Paper className={classes.Paper}>
-        <Typography>
+        <Typography className={classes.Text}>
           During developing this app I mostly struggled with UI design.
         </Typography>
-        <Typography>
+        <Typography className={classes.Text}>
           The most satisfying task was the API connection.
         </Typography>
 
-        <Button onClick={() => dispatch(close())}>Close</Button>
+        <Button className={classes.Button} onClick={() => dispatch(close())}>
+          Close
+        </Button>
       </Paper>
     </div>
   );

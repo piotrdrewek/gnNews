@@ -5,12 +5,11 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import ArticleIcon from "@mui/icons-material/Article";
 
 const useStyles = makeStyles({
   Content: {
     backgroundColor: "#e2e0e0 !important",
-    // display: "flex",
-    // flexDirection: "column",
   },
   Header: {
     display: "flex",
@@ -24,7 +23,7 @@ const useStyles = makeStyles({
     justifyContent: "flex-end !important",
     width: "100%",
   },
-  Title: {
+  Text: {
     textAlign: "start",
     fontWeight: "bold !important",
     textTransform: "none",
@@ -35,6 +34,15 @@ const useStyles = makeStyles({
     color: "inherit !important",
     width: "100%",
     alignItems: "flex-start !important",
+    backgroundColor: "#767676 !important",
+  },
+  Title: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  Link: {
+    color: "black !important",
+    backgroundColor: "#3a3a3a !important",
   },
 });
 interface Props {
@@ -60,9 +68,13 @@ export default function List(article: Props) {
         }}
       >
         <div className={classes.Header}>
-          <Typography className={classes.Title}>
-            {article.article.title}
-          </Typography>
+          <div className={classes.Title}>
+            <ArticleIcon />
+            <Typography className={classes.Text}>
+              {article.article.title}
+            </Typography>
+          </div>
+
           {!open && <KeyboardArrowDownIcon />}
           {open && <KeyboardArrowUpIcon />}
         </div>
@@ -70,10 +82,18 @@ export default function List(article: Props) {
         {open && (
           <>
             {article.article.description && (
-              <Typography>{article.article.description}</Typography>
+              <Typography style={{ textAlign: "start" }}>
+                {article.article.description}
+              </Typography>
             )}
-            <Typography>{article.article.author}</Typography>
-            <Button href={article.article.url} target="_blank">
+            <Typography style={{ fontSize: "0.8rem" }}>
+              {article.article.author}
+            </Typography>
+            <Button
+              className={classes.Link}
+              href={article.article.url}
+              target="_blank"
+            >
               <Typography>Open article in new tab</Typography>
             </Button>
           </>

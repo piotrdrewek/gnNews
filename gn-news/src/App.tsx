@@ -8,37 +8,29 @@ import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 const useStyles = makeStyles({
   app: {
-    // display: "grid",
-    // gridTemplateColumns: "[c-line1] 20% [c-line2] 80% [c-line3]",
-    // gridTemplateRows: "[r-line1] 15% [r-line2] 70% [r-line3] 15% [r-line4]",
     display: "flex",
-    // flexWrap: "wrap",
     flexDirection: "column",
     textAlign: "center",
-    // height: "100vh",
+    backgroundColor: "#141414",
   },
   header: {
-    height: "15vh",
-    // gridArea: "r-line1 / c-line1 / r-line2 / c-line3",
+    height: "10vh",
   },
   page: {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
     flexDirection: "row",
-    minHeight: "70vh",
+    minHeight: "80vh",
   },
   sidebar: {
     width: "20%",
     minWidth: "150px",
-    // gridArea: "r-line2 / c-line1 / r-line3 / c-line2",
   },
   content: {
     width: "80%",
-    // gridArea: "r-line2 / c-line2 / r-line3  / c-line3",
   },
   footer: {
-    height: "15vh",
-    // gridArea: "r-line3 / c-line1 / r-line4  / c-line3",
+    height: "10vh",
   },
 });
 

@@ -18,7 +18,9 @@ const useStyles = makeStyles({
     alignContent: "center",
     alignItems: "center",
     height: "100%",
-    backgroundColor: "#cfcece !important",
+    // backgroundColor: "#cfcece !important",
+    backgroundColor: "black !important",
+
     borderTopLeftRadius: "0 !important",
     borderTopRightRadius: "0 !important",
   },
@@ -27,13 +29,14 @@ const useStyles = makeStyles({
   },
   titleText: {
     fontSize: "2rem !important",
+    color: "white !important",
   },
   buttonsGroup: {
     marginRight: "10% !important",
   },
   buttons: {
-    color: "black !important",
-    borderColor: "black !important",
+    color: "white !important",
+    borderColor: "white !important",
   },
 });
 

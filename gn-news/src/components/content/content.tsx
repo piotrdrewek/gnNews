@@ -9,11 +9,20 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useDispatch } from "react-redux";
 import { setCounter, resetCounter } from "../../redux/counterSlice";
+import FlagIcon from "@mui/icons-material/Flag";
 
 const useStyles = makeStyles({
   Content: {
     display: "flex",
     flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "1vh 1vh",
+  },
+  NoCountry: {
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
@@ -56,7 +65,11 @@ export default function Content() {
         </div>
       )}
       {(!articles || !lang) && (
-        <Typography>Please choose the country</Typography>
+        <div className={classes.NoCountry}>
+          <Typography style={{ color: "white" }}>
+            Please choose the country: <FlagIcon />
+          </Typography>
+        </div>
       )}
     </>
   );
